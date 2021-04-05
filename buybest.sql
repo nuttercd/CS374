@@ -26,7 +26,8 @@ CREATE TABLE Employee(
 CREATE TABLE Vendor(
 	vendID int,
 	vendPhone varchar(15),
-	vendName varchar(255),
+	vendFN varchar(255),
+	vendLN varchar(255),
 	PRIMARY KEY(vendID)
 );
 
