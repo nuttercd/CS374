@@ -18,6 +18,7 @@ CREATE TABLE Employee(
 	empFN varchar(255),
 	empLN varchar(255),
 	bday date,
+    storeID int,
 	PRIMARY KEY(empID),
 	FOREIGN KEY(storeID) REFERENCES BuyBest(storeID)
 );
@@ -31,6 +32,7 @@ CREATE TABLE Vendor(
 
 CREATE TABLE Product(
 	itemID int,
+    vendID int,
 	itemPrice decimal,
 	itemName varchar(255),
 	quantity int,
@@ -40,6 +42,9 @@ CREATE TABLE Product(
 
 CREATE TABLE Sales(
 	salesID int,
+    itemID int,
+    custID int,
+    empID int,
 	PRIMARY KEY(salesID),
 	FOREIGN KEY(itemID) REFERENCES Product(itemID),
 	FOREIGN KEY(custID) REFERENCES Customer(custID),
